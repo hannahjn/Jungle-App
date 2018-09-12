@@ -31,15 +31,15 @@ gem 'puma'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-rails'
 gem 'money-rails'
-gem 'carrierwave'
-gem 'rmagick'
+gem 'carrierwave' #shrinks photos
+gem 'rmagick' #shrinks photos
 gem 'stripe'
 gem 'faker'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :development, :test do
+group :development, :test do #group gems to only load in certain environments
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'quiet_assets'
@@ -55,6 +55,6 @@ group :development do
 end
 
 group :production do
-  gem 'newrelic_rpm'
-  gem 'rails_12factor'
+  gem 'newrelic_rpm' #request tracker and analytics tool
+  gem 'rails_12factor' 
 end
