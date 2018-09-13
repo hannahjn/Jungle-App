@@ -1,5 +1,7 @@
 class Admin::CategoriesController < ApplicationController
 
+	http_basic_authenticate_with name: "jungle", password: "book"
+
 	def index
 		@categories = Category.order(created_at: :desc).all 
 		@category = Category.new
