@@ -132,5 +132,54 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+User.create!({
+  id: 1,
+  name: 'Michelle Obama',
+  email: 'Ob1Kanobe@gmail.com',
+  password_digest: 'badass1stlady'
+})
+
+Review.create!({
+  product_id: 1,
+  user_id: 1,
+  description: "Barack loved it",
+  rating: 5
+})
+
+Review.create!({
+  product_id: 2,
+  user_id: 1,
+  description: "More disappointing than the current POTUS",
+  rating: 1
+})
+
+Review.create!({
+  product_id: 3,
+  user_id: 1,
+  description: "Nice nice",
+  rating: 4
+})
+
+Review.create!({
+  product_id: 4,
+  user_id: 1,
+  description: "waste of money",
+  rating: 2
+})
+
+Review.create!({
+  product_id: 5,
+  user_id: 1,
+  description: "great xmas gift",
+  rating: 4
+})
+
+Review.create!({
+  product_id: 6,
+  user_id: 1,
+  description: "kinda gross",
+  rating: 3
+})
+
 
 puts "DONE!"
