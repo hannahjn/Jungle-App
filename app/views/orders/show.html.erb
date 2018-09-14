@@ -7,13 +7,14 @@
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
   </div>
-
+<h2> Order Summary: </h2>
 <% @order.line_items.each do |item| %>
-  <%= item.product.name %>
-  <%= item.product.image %>
-  <%= item.product.description %>
+  <%= item.product.name %> <br>
+  <%= image_tag(item.product.image) %> <br>
+  <%= item.product.description %> <br>
   <% end %>
-  <%= @order.total_cents %>
+  Order Total: $
+  <%= (@order.total_cents / 100.0).to_s %> <br>
 
   
 
