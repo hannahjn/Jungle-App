@@ -18,6 +18,11 @@ Rails.application.routes.draw do
     resources :categories, only: [:index, :new, :create]
   end
 
+  resources :products do
+    resources :reviews, only: [:create] do
+    end
+  end
+
   #GifVault::Application.routes.draw do
 
     #root to: 'gif#cool'
@@ -31,6 +36,8 @@ Rails.application.routes.draw do
     post '/users' => 'users#create'
     
   end
+
+  
   
 
 

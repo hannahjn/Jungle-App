@@ -22,6 +22,22 @@
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
+          <dt>Reviews</dt>
+          <% @product.reviews.reverse_each do |review| %>
+            <dd><%= "Rating: " + review.rating + "/5"%></dd>
+            <dd><%= "Comments: " + review.description %></dd>
+          <% end %>
+          <% if session[:user_id] %>
+            <%= form_for [@product, @review] do |f| %>
+              <h6>Add a Review</h6>
+                <%= f.text_area :description %>
+                <h6> Select a Rating </h6>
+                <%= f.select :rating, [1, 2, 3, 4, 5] %>
+                <%= f.submit "Add review" %>
+                <% end %>
+                <% else %>
+                <h6>Log in to leave a review</h6>
+            <% end %>
         </dl>
       </div>
     </div>
